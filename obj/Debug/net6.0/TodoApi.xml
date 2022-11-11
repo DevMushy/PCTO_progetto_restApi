@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TodoApi</name>
+    </assembly>
+    <members>
+        <member name="M:TodoApi.Controllers.TodoItemsController.GetTodoItems">
+            <summary>
+            Get all TodoItemDTO.
+            </summary>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.GetTodoItem(System.Int64)">
+            <summary>
+            Get a specific TodoItemDTO.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.UpdateTodoItem(System.Int64,TodoApi.Models.TodoItemDTO)">
+            <summary>
+            Override a specific TodoItemDTO.
+            </summary>
+            <param name="id"></param>
+            <param name="todoItemDTO"></param>
+            <response code="200">Returns an overridden TodoItemDTO</response>
+            <response code="304">If the item is not overridden</response>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.CreateTodoItem(TodoApi.Models.TodoItemDTO)">
+            <summary>
+            Post a TodoItemDTO.
+            </summary>
+            <response code="201">Returns the newly created item</response>
+            <response code="400">If the item is null</response>
+        </member>
+        <member name="M:TodoApi.Controllers.TodoItemsController.DeleteTodoItem(System.Int64)">
+            <summary>
+            Delete a specific TodoItemDTO.
+            </summary>
+            <param name="id"></param>
+            <response code="200">Returns the deleted item</response>
+            <response code="204">If the item is null</response>
+            <response code="404">object was not deleted, not found</response>
+        </member>
+    </members>
+</doc>

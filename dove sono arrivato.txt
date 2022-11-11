@@ -1,0 +1,111 @@
+https://www.youtube.com/watch?v=-_IifFrBjdU&t=1209s
+
+
+prossima volta si riguarda insieme ad esat un po tutto si reformatta e si aggiunge estensioni;
+
+
+
+
+
+
+
+da riguardare css
+
+//vecchio startup
+/*
+using TodoApi.Models;
+using SwaggerBasicAuth.IService;
+using SwaggerBasicAuth.Service;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication;
+using SwaggerBasicAuth;
+using System.Text;
+using System.Configuration;
+
+var builder = WebApplication.CreateBuilder(args);
+
+        Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options => {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+                });
+            builder.Services.AddMvc();
+
+// Add services to the container.
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddControllers();
+builder.Services.AddRouting();
+builder.Services.AddSingleton<TodoContext>();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "basic",
+        In = ParameterLocation.Header,
+        Description = "Basic Auth Header"
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+        {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference
+            {
+                Type = ReferenceType.SecurityScheme,
+                Id="basic"
+            }
+        },
+         new string[]{}
+        }
+    });
+    c.SwaggerDoc("v1", new() { Title = "Api Ragusa", Version = "v2.1", Description = "prova descrizione", Contact = new Microsoft.OpenApi.Models.OpenApiContact { Name = "Mirko" } });
+    var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
+
+//builder.Services.AddAuthentication("BasicAuthentication").AddScheme<AuthenticationSchemeOptions,BasicAuthenticationHandler>("BasicAuthentication", null);
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (builder.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "TodoApi v1");
+        c.InjectStylesheet("/Style.css");
+    });
+}
+
+
+app.UseDefaultFiles();
+
+app.UseStaticFiles();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+*/
