@@ -88,7 +88,8 @@ namespace TodoApi.Controllers
         /// </summary>
         /// <response code="201">Returns the newly created item</response>
         /// <response code="400">If the item is null</response>
-        [HttpPost]
+        [HttpPost("PostItem")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         
