@@ -25,7 +25,7 @@ namespace TodoApi.Controllers
         }
 
 
-        [HttpGet("Sellers")]
+        [HttpGet("User")]
         [Authorize(Roles = "User")]
         public IActionResult SellersEndpoint()
         {
