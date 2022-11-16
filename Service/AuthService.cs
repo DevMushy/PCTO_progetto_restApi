@@ -7,9 +7,9 @@ using TodoApi.IService;
 
 namespace TodoApi.Service
 {
-    public interface AuthService : IAuthentication
+    public class AuthService : IAuthentication
     {
-        
+
         public UserModel? Authenticate(UserLogin userLogin)
         {
             var currentUser = UserConstants.Users.FirstOrDefault(o => o.Username.ToLower() == userLogin.Username.ToLower() && o.Password == userLogin.Password);
@@ -22,7 +22,7 @@ namespace TodoApi.Service
             return null;
         }
 
-        public string Generate(UserModel user,IConfiguration _config)
+        public string Generate(UserModel user, IConfiguration _config)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

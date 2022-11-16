@@ -3,6 +3,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using TodoApi.Models;
+using TodoApi.IService;
+using TodoApi.Service;
 
 namespace TodoApi
 {
@@ -35,6 +37,7 @@ namespace TodoApi
             services.AddMvc();
             services.AddControllers();
             services.AddRazorPages();
+            services.AddScoped<IAuthentication, AuthService>();
             services.AddSwaggerGen(c =>
                 {
                     c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
@@ -62,7 +65,6 @@ namespace TodoApi
                     var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
                     c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
                 });
-            services.AddControllers();
             services.AddRouting();
             services.AddSingleton<TodoContext>();
         }
@@ -82,8 +84,6 @@ namespace TodoApi
                 });
             }
 
-            app.UseStaticFiles();
-
             app.UseAuthentication();
 
             app.UseAuthorization();
@@ -91,10 +91,6 @@ namespace TodoApi
             app.UseDefaultFiles();
 
             app.UseStaticFiles();
-
-            app.UseAuthentication();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

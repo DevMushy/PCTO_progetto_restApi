@@ -2,32 +2,31 @@ using TodoApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TodoApi.IService;
-using TodoApi.Service;
 
 namespace TodoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class GenerateTokenController : ControllerBase
     {
         private IConfiguration _config;
-        private AuthService _IAuth;
+        private IAuthentication _authenticationService;
 
-        public LoginController(IConfiguration config,AuthService IAuth)
+        public GenerateTokenController(IConfiguration config,IAuthentication authenticationService)
         {
             _config = config;
-            _IAuth = IAuth;
+            _authenticationService = authenticationService;
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] UserLogin userLogin)
+        public IActionResult GenerateToken([FromBody] UserLogin userLogin)
         {
-            var user = _IAuth.Authenticate(userLogin);
+            var user = _authenticationService.Authenticate(userLogin);
 
             if (user != null)
             {
-                var token = _IAuth.Generate(user,_config);
+                var token = _authenticationService.Generate(user,_config);
                 return Ok(token);
             }
 

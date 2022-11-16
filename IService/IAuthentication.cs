@@ -10,7 +10,6 @@ namespace TodoApi.IService
     {
         
         public UserModel? Authenticate(UserLogin userLogin);
-
         public string Generate(UserModel user,IConfiguration _config);
     }
 }
