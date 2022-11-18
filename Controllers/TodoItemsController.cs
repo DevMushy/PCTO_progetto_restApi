@@ -21,7 +21,6 @@ namespace TodoApi.Controllers
         /// Get all TodoItemDTO.
         /// </summary>
         [HttpGet]
-        [AllowAnonymous]
         public  ActionResult<IEnumerable<TodoItemDTO>> GetTodoItems()
         {
             return  _context.TodoItems
@@ -35,7 +34,6 @@ namespace TodoApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         [HttpGet("{id}")]
-        [AllowAnonymous]
         public ActionResult<TodoItemDTO> GetTodoItem(long id)
         {
             var todoItem =  _context.TodoItems.FirstOrDefault(x => x.Id == id);
@@ -59,6 +57,7 @@ namespace TodoApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status304NotModified)]
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult UpdateTodoItem(long id, TodoItemDTO todoItemDTO)
         {
             if (id != todoItemDTO.Id)

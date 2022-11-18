@@ -61,7 +61,7 @@ namespace TodoApi
                         new string[]{}
                         }
                     });
-                    c.SwaggerDoc("v1", new() { Title = "Api Ragusa", Version = "v2.1", Description = "prova descrizione", Contact = new Microsoft.OpenApi.Models.OpenApiContact { Name = "Mirko" } });
+                    c.SwaggerDoc("v1", new() { Title = "Api Ragusa", Version = "v2.2", Description = "Api che permette di usare i metodi [get,post,put,delete] e un metodo autenticazione per usare i get basta autenticarsi con uno user classico per il resto devi avere l'autorizzazione come admin", Contact = new Microsoft.OpenApi.Models.OpenApiContact { Name = "Mirko" } });
                     var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
                     c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
                 });
