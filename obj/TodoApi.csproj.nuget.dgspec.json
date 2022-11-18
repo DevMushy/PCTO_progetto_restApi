@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj": {}
+    "c:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj": {
+    "c:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj",
+        "projectUniqueName": "c:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj",
+        "projectPath": "c:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj",
         "packagesPath": "C:\\Users\\mirkor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\obj\\",
+        "outputPath": "c:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mirkor\\AppData\\Roaming\\NuGet\\NuGet.Config"

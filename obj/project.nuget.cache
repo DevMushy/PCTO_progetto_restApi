@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zMgl5ubVc6IGm9aSwoxXMRWXsEGrCUAkh7iwxYoVyIkbKVw0W/Uu+CZHcYlK6fMYoSmDspnmC7QKC790yAJCgg==",
+  "dgSpecHash": "XXxXG4IYQc/yp5yiEeI9OHZW8ghq41uVsucvLJPQ0g7l2pWb/44RFdoOnagk0+HdnXRA22N+pooe/xNrLaY/MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj",
+  "projectFilePath": "c:\\Users\\mirkor\\Desktop\\prova\\TodoApi\\TodoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mirkor\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mirkor\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",
